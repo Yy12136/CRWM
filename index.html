@@ -20,10 +20,13 @@
 
 <section class="hero">
   <div class="hero-body">
-    <div class="container is-max-desktop">
+    <div class="container is-max-fullhd">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CRWM: Causal Reward World Model for Invariant Policy Optimization</h1>
+          <h1 class="publication-title">
+            <span class="publication-title-primary">Causal Reward World Models</span>
+            <span class="publication-title-secondary">Zero-shot Reward Design for Automated Skill Generation</span>
+          </h1>
           
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -75,13 +78,13 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-max-fullhd">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The capability of imagining internally with a mental model of the world is important for intelligent agents. However, existing Large Language Model (LLM)-driven paradigms for Automated Reward Design (ARD) fundamentally lack such causal understanding. Relying on observational correlations embedded in physical trajectories without decoupling confounding factors, these methods suffer from profound mechanistic blindness. Consequently, they often misinterpret spurious correlates as true causal prerequisites, triggering systemic bottlenecks such as \textit{Optimization Collapse} and \textit{Specification Gaming}, which necessitate computationally prohibitive evolutionary trial-and-error loops. In this paper, we propose Causal Reward World Models (CRWMs) to enable unconfounded causal structural reasoning. Through a joint optimization engine, our framework distills a pure, task-invariant causal skeleton from continuous multi-task dynamics by explicitly decoupling state-dependent transient interactions. Elevating this refined structural prior empowers the LLM to execute rigorous counterfactual reasoning and causal pruning during the synthesis phase—structurally allocating zero weight to spurious correlates. Extensive experiments across complex continuous control tasks demonstrate that CRWM effectively guides the eradication of non-causal vulnerabilities responsible for these failures, achieving true zero-shot reward generation that not only exhibits exceptional efficiency but also yields task performance that closely approaches state-of-the-art (SOTA) results.
+            The capability of imagining internally with a mental model of the world is important for intelligent agents. However, existing Large Language Model (LLM)-driven paradigms for Automated Reward Design (ARD) fundamentally lack such causal understanding. Relying on observational correlations embedded in physical trajectories without decoupling confounding factors, these methods suffer from profound mechanistic blindness. Consequently, they often misinterpret spurious correlates as true causal prerequisites, triggering systemic bottlenecks such as Optimization Collapse and Specification Gaming, which necessitate computationally prohibitive evolutionary trial-and-error loops. In this paper, we propose Causal Reward World Models (CRWMs) to enable unconfounded causal structural reasoning. Through a joint optimization engine, our framework distills a pure, task-invariant causal skeleton from continuous multi-task dynamics by explicitly decoupling state-dependent transient interactions. Elevating this refined structural prior empowers the LLM to execute rigorous counterfactual reasoning and causal pruning during the synthesis phase—structurally allocating zero weight to spurious correlates. Extensive experiments across complex continuous control tasks demonstrate that CRWM effectively guides the eradication of non-causal vulnerabilities responsible for these failures, achieving true zero-shot reward generation that not only exhibits exceptional efficiency but also yields task performance that closely approaches state-of-the-art (SOTA) results.
           </p>
         </div>
       </div>
@@ -91,13 +94,13 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body">
-    <div class="container is-max-desktop">
+    <div class="container is-max-fullhd">
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">Demonstration</h2>
-          <div class="publication-video">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="static\videos\CRWM.mp4" type="video/mp4">
+          <div class="demonstration-video-shell">
+            <video class="demonstration-video" poster="" autoplay controls muted loop playsinline>
+              <source src="static/videos/CRWM.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -107,16 +110,16 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-max-fullhd">
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered">Framework</h2>
         <div class="has-text-centered">
-          <img src="static\images\method.png" class="framework-img" alt="CRWM Framework">
+          <img src="static/images/method.png" class="framework-img" alt="CRWM Framework">
         </div>
         <div class="content has-text-justified mt-4">
           <p>
-            <strong>Overview of the Causal Reward World Model (CRWM) framework</strong> The pipeline consists of three synergistic phases: (1) \textbf{Structural Prior Extraction:} Prior interventional data ($\mathcal{D}_{off}$) is bifurcated into macroscopic ($\mathcal{D}_{macro}$) and microscopic ($\mathcal{D}_{micro}$) streams. A pre-trained causal foundation model (LimiX) processes $\mathcal{D}_{macro}$ to extract the initial, coarse structural prior $\langle M_{prior}, M_{conf} \rangle$. (2) \textbf{Joint Optimization Engine:} The Explicit Mechanism Decoupling (EMD) module separates environment dynamics into an invariant causal skeleton $M_{inv}$ (blue stream) and transient interactions $M_{trans}$ (orange stream) to form the instantaneous graph $M_{inst}$. Subsequently, the joint optimization engine utilizes $\mathcal{D}_{micro}$ to continuously optimize this structure via Confidence-Aware Soft Fusion, thereby distilling the final CRWM ($M_{inv}^*$). (3) \textbf{Causal-ARD:} The distilled causal topology, combined with unseen task information, is deployed within our Causal-ARD framework to guide the downstream Large Language Model (LLM). Through explicit causal pruning, the LLM synthesizes executable zero-shot reward functions.
+            <strong>Overview of the Causal Reward World Model (CRWM) framework</strong> The pipeline consists of three synergistic phases: (1) Structural Prior Extraction: Prior interventional data is bifurcated into macroscopic and microscopic streams. A pre-trained causal foundation model (LimiX) processes to extract the initial, coarse structural prior. (2) Joint Optimization Engine: The Explicit Mechanism Decoupling (EMD) module separates environment dynamics into an invariant causal skeleton (blue stream) and transient interactions (orange stream) to form the instantaneous graph. Subsequently, the joint optimization engine utilizes to continuously optimize this structure via Confidence-Aware Soft Fusion, thereby distilling the final CRWM. (3) Causal-ARD: The distilled causal topology, combined with unseen task information, is deployed within our Causal-ARD framework to guide the downstream Large Language Model (LLM). Through explicit causal pruning, the LLM synthesizes executable zero-shot reward functions.
           </p>
         </div>
       </div>
@@ -124,24 +127,176 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
+<section class="section section-experiments">
+  <div class="container is-max-fullhd">
     <h2 class="title is-3 has-text-centered">Experiments & Results</h2>
+
+    <h3 class="title is-4 experiment-subsection-title has-text-centered">Dexterity</h3>
     <div class="columns is-multiline">
-      <div class="column is-half">
-        <div class="content">
-          <h3 class="title is-5">ShadowHand: ReOrientation</h3>
-          <video autoplay controls muted loop playsinline width="100%">
-            <source src="#" type="video/mp4">
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/ShadowHandKettle.mp4" type="video/mp4">
           </video>
+          <p class="experiment-caption has-text-centered">ShadowHandKettle</p>
+          <div class="has-text-centered">
+            <img src="static/images/experiments/ShadowHandKettle.png" class="experiment-figure-img" alt="ShadowHandKettle">
+          </div>
         </div>
       </div>
-      <div class="column is-half">
-        <div class="content">
-          <h3 class="title is-5">ShadowHand: SwingCup</h3>
-          <video autoplay controls muted loop playsinline width="100%">
-            <source src="#" type="video/mp4">
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/ShadowHandCatchAbreast.mp4" type="video/mp4">
           </video>
+          <p class="experiment-caption has-text-centered">ShadowHandCatchAbreast</p>
+          <div class="has-text-centered">
+            <img src="static/images/experiments/ShadowHandCatchAbreast.png" class="experiment-figure-img" alt="ShadowHandCatchAbreast">
+          </div>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/ShadowHandCatchOver2Underarm.mp4" type="video/mp4">
+          </video>
+          <p class="experiment-caption has-text-centered">ShadowHandCatchOver2Underarm</p>
+          <div class="has-text-centered">
+            <img src="static/images/experiments/ShadowHandCatchOver2Underarm.png" class="experiment-figure-img" alt="ShadowHandCatchOver2Underarm">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-multiline mt-5">
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/ShadowHandDoorCloseOutward.mp4" type="video/mp4">
+          </video>
+          <p class="experiment-caption has-text-centered">ShadowHandDoorCloseOutward</p>
+          <div class="has-text-centered">
+            <img src="static/images/experiments/ShadowHandDoorCloseOutward.png" class="experiment-figure-img" alt="ShadowHandDoorCloseOutward">
+          </div>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/ShadowHandPen.mp4" type="video/mp4">
+          </video>
+          <p class="experiment-caption has-text-centered">ShadowHandPen</p>
+          <div class="has-text-centered">
+            <img src="static/images/experiments/ShadowHandPen.png" class="experiment-figure-img" alt="ShadowHandPen">
+          </div>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/ShadowHandLiftUnderarm.mp4" type="video/mp4">
+          </video>
+          <p class="experiment-caption has-text-centered">ShadowHandLiftUnderarm</p>
+          <div class="has-text-centered">
+            <img src="static/images/experiments/ShadowHandLiftUnderarm.png" class="experiment-figure-img" alt="ShadowHandLiftUnderarm">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="title is-4 experiment-subsection-title has-text-centered">Maniskill2</h3>
+    <div class="columns is-multiline">
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/PickCube.mp4" type="video/mp4">
+          </video>
+          <p class="experiment-caption has-text-centered">PickCube</p>
+          <div class="has-text-centered mt-3">
+            <img src="static/images/experiments/PickCube.png" class="experiment-figure-img" alt="PickCube">
+          </div>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/TurnFaucet.mp4" type="video/mp4">
+          </video>
+          <p class="experiment-caption has-text-centered">TurnFaucet</p>
+          <div class="has-text-centered mt-3">
+            <img src="static/images/experiments/TurnFaucet.png" class="experiment-figure-img" alt="TurnFaucet">
+          </div>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="experiment-item">
+          <video class="experiment-video" controls muted loop playsinline>
+            <source src="static/videos/experiments/OpenCabinetDrawer.mp4" type="video/mp4">
+          </video>
+          <p class="experiment-caption has-text-centered">OpenCabinetDrawer</p>
+          <div class="has-text-centered mt-3">
+            <img src="static/images/experiments/OpenCabinetDrawer.png" class="experiment-figure-img" alt="OpenCabinetDrawer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="title is-4 experiment-subsection-title has-text-centered">Real-World</h3>
+    <div class="columns is-multiline">
+      <div class="column is-one-third">
+        <div class="experiment-item experiment-item--realworld-pair">
+          <div class="experiment-video-stack">
+            <div class="experiment-video-wrap">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/real/pickcube.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="experiment-video-wrap">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/real/pickcube_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <p class="experiment-caption has-text-centered">PickCube</p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="experiment-item experiment-item--realworld-pair">
+          <div class="experiment-video-stack">
+            <div class="experiment-video-wrap">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/real/liftunderarm.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="experiment-video-wrap">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/real/lift_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <p class="experiment-caption has-text-centered">ShadowHandLiftUnderarm</p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="experiment-item experiment-item--realworld-pair">
+          <div class="experiment-video-stack">
+            <div class="experiment-video-wrap">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/real/scissors.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="experiment-video-wrap">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/real/scissors_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <p class="experiment-caption has-text-centered">ShadowHandScissors</p>
         </div>
       </div>
     </div>
@@ -153,19 +308,19 @@
           <thead>
             <tr>
               <th>Method</th>
-              <th>Success Rate (Mean)</th>
+              <th>AUC (Mean)</th>
               <th>Reward Stability</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Baseline (Static)</td>
-              <td>45.2%</td>
+              <td>Baseline</td>
+              <td>53.9%</td>
               <td>Low</td>
             </tr>
             <tr>
               <td><strong>CRWM (Ours)</strong></td>
-              <td><strong>92.8%</strong></td>
+              <td><strong>96.5%</strong></td>
               <td><strong>High</strong></td>
             </tr>
           </tbody>
@@ -175,8 +330,23 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-fullhd">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Conclusions</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this study, we presented Causal Reward World Models (CRWMs) to redefine the landscape of Automated Reward Design (ARD). Rather than relying on computationally exhaustive evolutionary searches that are inherently prone to exploiting spurious correlations, our framework bridges the critical gap between the semantic reasoning of Large Language Models (LLMs) and genuine physical dynamics. By systematically disentangling stationary topological laws from transient physical noise, we successfully extract generalizable causal priors from offline multi-task data. When deployed as explicit structural constraints during code synthesis, these priors guide foundation models to effectively bypass the pervasive pitfalls of \textit{Optimization Collapse} and \textit{Specification Gaming}. Ultimately, the CRWM paradigm facilitates the synthesis of highly aligned, executable reward functions in a strictly zero-shot manner, delivering state-of-the-art policy performance while eliminating the need for expensive online environmental iterations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
-  <div class="container">
+  <div class="container is-max-fullhd">
     <div class="content has-text-centered">
       <p>This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
     </div>

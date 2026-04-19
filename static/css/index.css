@@ -99,6 +99,51 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
+/* 与 Demonstration（hero is-light）一致的浅灰区块背景 */
+.section-experiments {
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Demonstration：视频不占满整栏，约 75% 宽居中（无卡片包裹） */
+.demonstration-video-shell {
+  width: 100%;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .demonstration-video-shell {
+    max-width: 100%;
+  }
+}
+
+.demonstration-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+}
+
+.demonstration-caption {
+  margin: 0.85rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.demonstration-caption__label {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.demonstration-caption__desc {
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
 .hero-body {
   padding: 4rem 1.5rem;
 }
@@ -120,6 +165,20 @@ body {
     color: var(--text-primary) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
+}
+
+.publication-title-primary {
+    display: block;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+}
+
+.publication-title-secondary {
+    display: block;
+    font-size: 3rem;
+    line-height: 1.15;
+    font-weight: 800 !important;
 }
 
 .publication-banner {
@@ -220,12 +279,16 @@ body {
 .publication-video {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
     overflow: hidden;
     border-radius: var(--border-radius-lg) !important;
     box-shadow: var(--shadow-xl);
     transition: var(--transition);
+}
+
+/* 16:9 占位仅用于 iframe 嵌入；原生 <video> 使用实际宽高比，避免被裁切 */
+.publication-video:has(> iframe) {
+    height: 0;
+    padding-bottom: 56.25%;
 }
 
 .publication-video:hover {
@@ -240,6 +303,113 @@ body {
     width: 100%;
     height: 100%;
     border-radius: var(--border-radius-lg);
+}
+
+.publication-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+}
+
+/* Experiments & Results subsections */
+.experiment-subsection-title {
+    margin-top: 2.5rem !important;
+    margin-bottom: 1.25rem !important;
+    color: var(--text-primary);
+}
+
+.experiment-subsection-title:first-of-type {
+    margin-top: 1.5rem !important;
+}
+
+.experiment-item {
+    margin-bottom: 1rem;
+}
+
+/* 实验区块：每个视频+图例(+图) 包成白底卡片，浮在浅灰背景上 */
+.section-experiments .experiment-item {
+    background: var(--background-primary);
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+    padding: 1rem 1rem 1.15rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.experiment-video {
+    display: block;
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.section-experiments .experiment-item .experiment-video {
+    box-shadow: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.section-experiments .experiment-caption {
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.45;
+    font-weight: 600;
+}
+
+.section-experiments .experiment-caption .experiment-caption-desc {
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.experiment-caption {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Real-World：上下两个视频共用一个卡片；角标叠在视频右上角 */
+.experiment-video-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.experiment-video-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f0f0f;
+}
+
+.experiment-item--realworld-pair .experiment-caption {
+    margin-top: 0.85rem;
+}
+
+.experiment-status-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.experiment-figure-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin-top: 0.5rem;
 }
 
 .publication-body img {
@@ -609,9 +779,18 @@ code {
   }
   
   .publication-title {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .publication-title-primary {
+    font-size: 2.875rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.25rem;
+  }
+
+  .publication-title-secondary {
     font-size: 2.5rem !important;
     line-height: 1.2 !important;
-    margin-bottom: 1.5rem !important;
   }
   
   .publication-authors {
@@ -657,7 +836,11 @@ code {
 }
 
 @media screen and (max-width: 480px) {
-  .publication-title {
+  .publication-title-primary {
+    font-size: 2.35rem !important;
+  }
+
+  .publication-title-secondary {
     font-size: 2rem !important;
   }
   
