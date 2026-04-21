@@ -100,7 +100,7 @@
           <h2 class="title is-3">Demonstration</h2>
           <div class="demonstration-video-shell">
             <video class="demonstration-video" poster="" autoplay controls muted loop playsinline>
-              <source src="static/videos/CRWM.mp4" type="video/mp4">
+              <source src="static/videos/CRWM_new.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -132,112 +132,304 @@
     <h2 class="title is-3 has-text-centered">Experiments & Results</h2>
 
     <h3 class="title is-4 experiment-subsection-title has-text-centered">Dexterity</h3>
-    <div class="columns is-multiline">
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/ShadowHandKettle.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">ShadowHandKettle</p>
-          <div class="has-text-centered">
-            <img src="static/images/experiments/ShadowHandKettle.png" class="experiment-figure-img" alt="ShadowHandKettle">
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/kettle_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/ShadowHandKettle.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
           </div>
         </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/ShadowHandCatchAbreast.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">ShadowHandCatchAbreast</p>
-          <div class="has-text-centered">
-            <img src="static/images/experiments/ShadowHandCatchAbreast.png" class="experiment-figure-img" alt="ShadowHandCatchAbreast">
-          </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/ShadowHandKettle.png" class="experiment-figure-img" alt="ShadowHandKettle">
         </div>
       </div>
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/ShadowHandCatchOver2Underarm.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">ShadowHandCatchOver2Underarm</p>
-          <div class="has-text-centered">
-            <img src="static/images/experiments/ShadowHandCatchOver2Underarm.png" class="experiment-figure-img" alt="ShadowHandCatchOver2Underarm">
-          </div>
-        </div>
-      </div>
+      <p class="experiment-caption has-text-centered">ShadowHandKettle</p>
     </div>
-    <div class="columns is-multiline mt-5">
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/ShadowHandDoorCloseOutward.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">ShadowHandDoorCloseOutward</p>
-          <div class="has-text-centered">
-            <img src="static/images/experiments/ShadowHandDoorCloseOutward.png" class="experiment-figure-img" alt="ShadowHandDoorCloseOutward">
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/catchabreast_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/ShadowHandCatchAbreast.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
           </div>
         </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/ShadowHandPen.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">ShadowHandPen</p>
-          <div class="has-text-centered">
-            <img src="static/images/experiments/ShadowHandPen.png" class="experiment-figure-img" alt="ShadowHandPen">
-          </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/ShadowHandCatchAbreast.png" class="experiment-figure-img" alt="ShadowHandCatchAbreast">
         </div>
       </div>
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/ShadowHandLiftUnderarm.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">ShadowHandLiftUnderarm</p>
-          <div class="has-text-centered">
-            <img src="static/images/experiments/ShadowHandLiftUnderarm.png" class="experiment-figure-img" alt="ShadowHandLiftUnderarm">
+      <p class="experiment-caption has-text-centered">ShadowHandCatchAbreast</p>
+    </div>
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/catchover2underarm_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/ShadowHandCatchOver2Underarm.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
           </div>
         </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/ShadowHandCatchOver2Underarm.png" class="experiment-figure-img" alt="ShadowHandCatchOver2Underarm">
+        </div>
       </div>
+      <p class="experiment-caption has-text-centered">ShadowHandCatchOver2Underarm</p>
+    </div>
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/doorcloseoutward_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/ShadowHandDoorCloseOutward.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
+          </div>
+        </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/ShadowHandDoorCloseOutward.png" class="experiment-figure-img" alt="ShadowHandDoorCloseOutward">
+        </div>
+      </div>
+      <p class="experiment-caption has-text-centered">ShadowHandDoorCloseOutward</p>
+    </div>
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/pen_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/ShadowHandPen.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
+          </div>
+        </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/ShadowHandPen.png" class="experiment-figure-img" alt="ShadowHandPen">
+        </div>
+      </div>
+      <p class="experiment-caption has-text-centered">ShadowHandPen</p>
+    </div>
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/LiftUnderarm_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/ShadowHandLiftUnderarm.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
+          </div>
+        </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/ShadowHandLiftUnderarm.png" class="experiment-figure-img" alt="ShadowHandLiftUnderarm">
+        </div>
+      </div>
+      <p class="experiment-caption has-text-centered">ShadowHandLiftUnderarm</p>
     </div>
 
     <h3 class="title is-4 experiment-subsection-title has-text-centered">Maniskill2</h3>
-    <div class="columns is-multiline">
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/PickCube.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">PickCube</p>
-          <div class="has-text-centered mt-3">
-            <img src="static/images/experiments/PickCube.png" class="experiment-figure-img" alt="PickCube">
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/pickcube_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/PickCube.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
           </div>
         </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/TurnFaucet.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">TurnFaucet</p>
-          <div class="has-text-centered mt-3">
-            <img src="static/images/experiments/TurnFaucet.png" class="experiment-figure-img" alt="TurnFaucet">
-          </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/PickCube.png" class="experiment-figure-img" alt="PickCube">
         </div>
       </div>
-      <div class="column is-one-third">
-        <div class="experiment-item">
-          <video class="experiment-video" controls muted loop playsinline>
-            <source src="static/videos/experiments/OpenCabinetDrawer.mp4" type="video/mp4">
-          </video>
-          <p class="experiment-caption has-text-centered">OpenCabinetDrawer</p>
-          <div class="has-text-centered mt-3">
-            <img src="static/images/experiments/OpenCabinetDrawer.png" class="experiment-figure-img" alt="OpenCabinetDrawer">
+      <p class="experiment-caption has-text-centered">PickCube</p>
+    </div>
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/turnfaucet_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/TurnFaucet.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
           </div>
         </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/TurnFaucet.png" class="experiment-figure-img" alt="TurnFaucet">
+        </div>
       </div>
+      <p class="experiment-caption has-text-centered">TurnFaucet</p>
+    </div>
+
+    <div class="experiment-row-card">
+      <div class="experiment-row-body">
+        <div class="experiment-row-videos">
+          <div class="experiment-compare-side experiment-compare-side--bad">
+            <div class="experiment-video-wrap experiment-video-wrap--bad">
+              <img src="static/images/error.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/bad/opencabinetdrawer_bad.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--bad">ZS-LLM</p>
+          </div>
+          <div class="experiment-compare-divider">
+              <div class="compare-arrow-line"></div>
+              <span class="compare-arrow-label">Eureka or URDP<br>(evolutionary searches)</span>
+          </div>
+          <div class="experiment-compare-side experiment-compare-side--good">
+            <div class="experiment-video-wrap experiment-video-wrap--good">
+              <img src="static/images/check.png" class="experiment-status-badge" alt="">
+              <video class="experiment-video" controls muted loop playsinline>
+                <source src="static/videos/experiments/OpenCabinetDrawer.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="compare-side-label compare-side-label--good">Ours<br><span class="compare-side-sublabel">(evolutionary-search-free)</span></p>
+          </div>
+        </div>
+        <div class="experiment-row-chart">
+          <img src="static/images/experiments/OpenCabinetDrawer.png" class="experiment-figure-img" alt="OpenCabinetDrawer">
+        </div>
+      </div>
+      <p class="experiment-caption has-text-centered">OpenCabinetDrawer</p>
     </div>
 
     <h3 class="title is-4 experiment-subsection-title has-text-centered">Real-World</h3>

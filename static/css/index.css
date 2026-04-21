@@ -374,6 +374,7 @@ body {
 }
 
 /* Real-World：上下两个视频共用一个卡片；角标叠在视频右上角 */
+/* Real-World: stacked pair */
 .experiment-video-stack {
     display: flex;
     flex-direction: column;
@@ -390,6 +391,152 @@ body {
 
 .experiment-item--realworld-pair .experiment-caption {
     margin-top: 0.85rem;
+}
+
+/* Dexterity / Maniskill2: full-width horizontal row card */
+.experiment-row-card {
+    background: var(--background-primary);
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+    padding: 1.4rem 2rem 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.experiment-row-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.experiment-row-videos {
+    flex: 7;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    min-width: 0;
+}
+
+.experiment-row-videos .experiment-compare-side {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.experiment-row-chart {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    min-width: 0;
+}
+
+.experiment-row-chart .experiment-figure-img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: block;
+}
+
+
+.experiment-compare-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+}
+
+.experiment-compare-side {
+    flex: 1;
+    min-width: 0;
+}
+
+.experiment-video-wrap--bad {
+    border: 2px dashed #dc2626;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: #0f0f0f;
+}
+
+.experiment-video-wrap--good {
+    border: 2px solid #16a34a;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: #0f0f0f;
+}
+
+.experiment-compare-divider {
+    flex: 0 0 auto;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    gap: 6px;
+    align-self: center;
+}
+
+/* CSS drawn long arrow */
+.compare-arrow-line {
+    position: relative;
+    width: 80px;
+    height: 2px;
+    background: #1e293b;
+    flex-shrink: 0;
+}
+
+.compare-arrow-line::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: -5px;
+    border: 6px solid transparent;
+    border-left: 9px solid #1e293b;
+}
+
+.compare-arrow-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #dc2626;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 110px;
+    word-break: break-word;
+}
+
+.compare-side-label {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.35;
+}
+
+.compare-side-sublabel {
+    font-size: 1rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.compare-side-label--bad {
+    color: #1d4ed8;
+}
+
+.compare-side-label--good {
+    color: #16a34a;
 }
 
 .experiment-status-badge {
